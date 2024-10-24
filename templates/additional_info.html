@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Additional Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
+    <div class="container">
+        <center>
+            <div>
+                <h1>HEART FAILURE ANALYSIS</h1>
+                <h2>Additional Information</h2>
+            </div>
+        </center>
+        <form action="/additional_info" method="post">
+            <input type="hidden" name="name" value="{{ name }}">
+            <input type="hidden" name="surname" value="{{ surname }}">
+            <input type="hidden" name="email" value="{{ email }}">
+            <input type="hidden" name="mobile" value="{{ mobile }}">
+            
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" step="0.1" required>
+            </div>
+            <!-- Chest Pain Type -->
+            <div class="form-group">
+                <label for="chest_pain_type">Chest Pain Type:</label>
+                <select id="chest_pain_type" name="chest_pain_type" required>
+                    <option value="0">None</option>
+                    <option value="1">Mild</option>
+                    <option value="2">Moderate</option>
+                    <option value="3">Severe</option>
+                </select>
+            </div>
+            <!-- Heart Rate -->
+            <div class="form-group">
+                <label for="heart_rate">Heart Rate (bpm):</label>
+                <input type="number" id="heart_rate" name="heart_rate" required>
+            </div>
+
+            <!-- Systolic Blood Pressure -->
+            <div class="form-group">
+                <label>Systolic Blood Pressure:</label>
+                <input type="number" id="systolic_bp_yes" name="systolic_bp" value="Yes" required>
+            </div>
+
+            <!-- Diastolic Blood Pressure -->
+            <div class="form-group">
+                <label>Diastolic Blood Pressure:</label>
+                <input type="number" id="diastolic_bp_yes" name="diastolic_bp" value="Yes" required>
+            </div>
+
+            <!-- Smoking -->
+            <div class="form-group">
+                <label for="smoking">Do You Smoke:</label>
+                <select id="smoking" name="smoking" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Diastolic Blood Pressure -->
+            <div class="form-group">
+                <label>Number of cigarettes in a day:</label>
+                <input type="number" id="cigarettes_per_day" name="cigarettes_per_day" value="Yes" required>
+            </div>
+
+            <!-- Diabetes -->
+            <div class="form-group">
+                <label for="diabetes">Diabetes:</label>
+                <select id="diabetes" name="diabetes" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Anaemia -->
+            <div class="form-group">
+                <label for="anaemia">Anaemia:</label>
+                <select id="anaemia" name="anaemia" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <!-- Heart Failure occurance in past -->
+            <div class="form-group">
+                <label for="past_heart_failure">Heart Failure Happend in Past:</label>
+                <select id="past_heart_failure" name="past_heart_failure" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+             <!-- SPO2 Level -->
+             <div class="form-group">
+                <label>SPO2 Level:</label>
+                <input type="number" id="spo2_level" name="spo2_level" value="Yes" required>
+            </div>
+
+            <!-- BPM Level -->
+            <div class="form-group">
+                <label for="bpm">BPM:</label>
+                <select id="bpm" name="bpm" required>
+                    <option value="0">Low</option>
+                    <option value="1">Normal</option>
+                    <option value="2">High</option>
+                </select>
+            </div>
+
+            <!-- Troponin Level -->
+            <div class="form-group">
+                <label>Troponin Level (0V to 10V):</label>
+                <input type="number" id="Troponin_level" name="Troponin_level" value="Yes" required>
+            </div>
+
+            <!-- Submit to Process -->
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

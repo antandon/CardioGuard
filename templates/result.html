@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <style>
+        /* Full-screen overlay */
+        #loading {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Loading bar styling */
+        .loading-bar {
+            width: 0;
+            height: 10px;
+            background-color: #007bff;
+            animation: load 3s linear forwards;
+        }
+
+        @keyframes load {
+            100% {
+                width: 80%;
+            }
+        }
+
+        /* Main content hidden initially */
+        #content {
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+     <!-- Loading overlay -->
+     <div id="loading">
+        <div class="loading-bar"></div>
+    </div>
+
+    <div id="content">
+        <div class="container">
+            <center>
+                <div>
+                    <h1>Heart Failure Prediction</h1>
+                    <img src="{{ url_for('static', filename='images/heart.jpg') }}" style="width: 40%; height: auto;">
+                </div>
+                <div>
+                    <h1>RESULTS PAGE</h1>
+                </div>
+            </center>
+            <div class="result-section">
+                <h2>Hello, {{ u_name }} {{u_surname}}!</h2>
+                <h4>Gender: {{ gen }}</h4>
+                <h4>Age: {{ age }}</h4>
+                <h4>BMI Value: {{ bmi_val }} kg/m^2</h4>
+                <h4>BMI Status: {{ bmi_status }}</h4>
+                <h4>Troponin Level: {{ troponin_level }} %</h4>
+                <center>
+                    <p>Your heart failure prediction result is:</p>
+                    <h3>HEALTHY SCORE: {{ h_score }} %</h3>
+                    <h3>UN-HEALTHY SCORE: {{ d_score }} %</h3>
+                    <h2>Status: {{ result_status }}</h2>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wait for the page to fully load
+        window.addEventListener('load', function() {
+            // Simulate a 3-second loading time
+            setTimeout(function() {
+                // Hide the loading overlay
+                document.getElementById('loading').style.display = 'none';
+                // Show the main content
+                document.getElementById('content').style.display = 'block';
+            }, 3000); // 3000ms = 3 seconds
+        });
+    </script>
+</body>
+
+<body>
+    <div>
+    <center> <p> "This application leverages a machine learning model, specifically a Random Forest classifier, to make predictions. Please note that while the model is designed for high accuracy, it is not infallible, and there may be instances where the predictions are incorrect. We strongly recommend consulting with a medical professional for any critical decisions based on these predictions."<p></center>
+    </div>
+</body>
+
+
+
+</html>
